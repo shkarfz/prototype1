@@ -7,7 +7,7 @@ import cAbi from "./contractAbi.json";
 const CONTRACT_ADDRESS="0x27ee472268D5B54BddC75827C68eB93c0Aec5223";
 
 function App() {
-  const { unityProvider } = useUnityContext({
+  const { unityProvider, sendMessage } = useUnityContext({
     loaderUrl: "prototypeBuild/Build/prototypeBuild.loader.js",
     dataUrl: "prototypeBuild/Build/prototypeBuild.data",
     frameworkUrl: "prototypeBuild/Build/prototypeBuild.framework.js",
@@ -63,6 +63,11 @@ function App() {
 
     await txn.wait(1);
   }
+
+  const sentMsgToUnity = () => {
+    sendMessage("GameObject", "receiveMsgFromDapp", "Message from React Dapp");
+  }
+
   return (
     <div className="App">
       <h1>React Unity NFT Test</h1>
@@ -83,6 +88,16 @@ function App() {
             <br/>
             <br/>
 
+
+            <div>
+                {(isAuthenticated && user) &&
+                  <>
+                    <button onClick={sentMsgToUnity}>Send message to unity</button>
+                  </>
+                }
+            </div>
+ 
+
             <div>
               {(isAuthenticated && user)?
                 <Unity unityProvider={unityProvider} style={{
@@ -92,7 +107,7 @@ function App() {
               :''}
             </div>  
 
-
+          
 
         </div>
     </div>

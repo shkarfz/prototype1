@@ -1,4 +1,4 @@
-// Load web3modal to connect to wallet
+// // Load web3modal to connect to wallet
 // document.body.appendChild(Object.assign(document.createElement("script"), {
 //     type: "text/javascript",
 //     src: "./web3/lib/web3modal.js"

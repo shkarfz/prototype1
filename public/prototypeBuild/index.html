@@ -57,14 +57,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/contract.loader.js";
+      var loaderUrl = buildUrl + "/prototypeBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/contract.data",
-        frameworkUrl: buildUrl + "/contract.framework.js",
-        codeUrl: buildUrl + "/contract.wasm",
+        dataUrl: buildUrl + "/prototypeBuild.data",
+        frameworkUrl: buildUrl + "/prototypeBuild.framework.js",
+        codeUrl: buildUrl + "/prototypeBuild.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "test",
+        productName: "prototypeGallery",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -83,8 +83,8 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "1920px";
+        canvas.style.height = "1080px";
       }
       loadingBar.style.display = "block";
 
